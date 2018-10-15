@@ -1,0 +1,14 @@
+.footer {
+  background-color: color(charcoal);
+  padding         : 8px;
+
+  &__col {
+    color    : color(white);
+    font-size: 12px;
+    padding  : 8px;
+
+    @media screen and (max-width: $breakpoint) {
+      text-align: left !important;
+    }
+  }
+}

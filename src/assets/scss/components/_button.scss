@@ -1,0 +1,14 @@
+.btn {
+  mso-hide                : all;
+  display                 : inline-block;
+  width                   : 88px;
+  font-family             : font(roboto);
+  font-size               : 14px;
+  line-height             : 36px;
+  color                   : color(white);
+  text-align              : center;
+  text-decoration         : none;
+  -webkit-text-size-adjust: none;
+  background-color        : color(blue, 500);
+  border-radius           : 2px;
+}

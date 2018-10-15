@@ -1,0 +1,54 @@
+.row {
+  width        : 100%;
+  padding-right: base-units(2);
+  padding-left : base-units(2);
+
+  // row that fills parent (default behaviour)
+  &__col {
+    width: 100%;
+  }
+
+  // row that fills parent but is constrained by a maximum width
+  &--max-width &__col {
+    max-width: 360px;
+    margin   : 0 auto;
+  }
+
+  // row containing two columns
+  &--cols {
+    padding-right: base-units();
+    padding-left : base-units();
+  }
+
+  &--cols &__col {
+    width         : 50%;
+    padding-right : base-units();
+    padding-left  : base-units();
+    vertical-align: top;
+
+    @media screen and (max-width: $breakpoint) {
+      display: block !important;
+      width  : auto !important;
+    }
+  }
+
+  // row containing two columns but is constrained by a maximum width
+  &--cols-max-width {
+    padding-right: base-units();
+    padding-left : base-units();
+  }
+
+  &--cols-max-width &__col {
+    width         : 50%;
+    max-width     : 320px;
+    padding-right : base-units();
+    padding-left  : base-units();
+    vertical-align: top;
+
+    @media screen and (max-width: $breakpoint) {
+      display: block !important;
+      width  : auto !important;
+      margin : 0 auto !important;
+    }
+  }
+}

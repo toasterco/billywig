@@ -1,0 +1,22 @@
+.default-font {
+  font-family: font(default);
+  font-size  : base-units(2);
+  line-height: 18px;
+  color      : color(blue, 900);
+
+  @media screen {
+    color      : color(charcoal);
+    font-family: font(roboto) !important;
+  }
+}
+
+.fancy-font {
+  font-family: font(default);
+  font-size  : base-units(2);
+  line-height: 18px;
+  color      : color(green);
+
+  @media screen {
+    font-family: font(roboto-slab) !important;
+  }
+}

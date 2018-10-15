@@ -1,0 +1,15 @@
+#ignore node_modules
+node_modules
+
+#ignore build directory
+build
+dist
+
+#ignore ds_store
+.DS_Store
+
+client_secret.json
+
+*.orig
+*.log
+

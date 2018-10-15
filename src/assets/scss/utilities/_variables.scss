@@ -1,0 +1,32 @@
+// ordered alphabetically, by type (number, string, etc)
+$base-unit   : 8px;
+$breakpoint  : 480px;
+$max-width   : 600px;
+$default-font: 'Arial', sans-serif;
+
+// colours; nested map; ordered alphabetically; grouped by non-map or map
+$colors: (
+  black   : #000,
+  charcoal: #333,
+  cloud   : #eee,
+  green   : #34a853,
+  red     : #EA4335,
+  white   : #fff,
+  yellow  : #fbbc04,
+  blue    : (
+    50 : #E8F0FE,
+    100: #D2E3FC,
+    500: #4285F4,
+    600: #1A73E8,
+    700: #1967D2,
+    800: #185ABC,
+    900: #174EA6
+  )
+);
+
+// font families
+$fonts: (
+  default    : $default-font,
+  roboto     : #{'Roboto', $default-font},
+  roboto-slab: #{'Roboto Slab', $default-font},
+);

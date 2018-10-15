@@ -1,0 +1,56 @@
+/**
+ * Returns product of base unit
+ */
+@function base-units($n: 1) {
+  @if ($n == 0) {
+    $n: 1;
+    @warn 'A value of 0 was provided for $n. This is not allowed and $n has been changed to 1.';
+  }
+  @return ($n * $base-unit);
+}
+
+/**
+ * Returns font family from map
+ * Returns false with warning if key is not found within map
+ */
+@function font($font-name) {
+  @if valid-key($fonts, $font-name) {
+    @return map-get($fonts, $font-name);
+  } @else {
+    @return false;
+  }
+}
+
+/**
+ * Method that returns a hexadecimal value of a colour within a nested map
+ * Returns false with warning if key is not found within map
+ */
+@function color($primary-color, $secondary-color: null) {
+  // secondary colour is optional
+  @if ($secondary-color != null) {
+    @if valid-key(map-get($colors, $primary-color), $secondary-color) {
+      @return map-get(map-get($colors, $primary-color), $secondary-color);
+    } @else {
+      @return false;
+    }
+  } @else {
+    @if valid-key($colors, $primary-color) {
+      @return map-get($colors, $primary-color);
+    } @else {
+      @return false;
+    }
+  }
+}
+
+/**
+ * Helper method that checks if a key exists within a map
+ * and throws a warning if false
+ */
+@function valid-key($map, $key) {
+  @if map_has_key($map, $key) {
+    @return true;
+  } @else {
+    @warn 'The map `#{$map}` doesn\'t have the key `#{$key}`.';
+  }
+  @return false;
+}

@@ -1,0 +1,24 @@
+body,
+html {
+  padding         : 0;
+  margin          : 0;
+  background-color: color(cloud);
+}
+
+a,
+div,
+li,
+p,
+td {
+  -webkit-text-size-adjust: none;
+}
+
+.content-wrapper {
+  max-width       : $max-width;
+  margin          : 0 auto;        // required for centering in Yahoo
+  background-color: color(white);
+}
+
+.root-wrapper {
+  background-color: color(cloud);
+}
