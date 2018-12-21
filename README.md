@@ -71,7 +71,7 @@ This template was [tested using selected clients provided by Litmus in October 2
   Outlook 2003 and 2010 accepts `line-height` values only in percentage[[8][8]] (ie, `1.1` is not supported but `110%` is). Through our own testing and tinkering, we have also discovered that a value less than 70%, or not in percentage, will result in the font face appearing cropped off.
 - **Responsive stacking**  
   Modifying the `display` and `width` properties of table cells within media queries provides more consistency across platforms compared to having floating tables. [[9][9]]
-- If you're trying to send the email using the "Copy and paste into Gmail" method (where you open the email in a browser, 'Copy all', compose a new email in the Gmail web client, and paste), remove any inline CSS width properties (ie, `width: 100%`) if you wish to preserve the responsive feature of the email.
+- If you're trying to send the email using the "Copy and paste into Gmail" method (where you open the email in a browser, 'Copy all', compose a new email in the Gmail web client, and paste), remove any inline CSS width properties (ie, `width: 100%`) if you wish to preserve the responsive feature of the email. Also, media queries (usually embedded in the `head`) are removed and you'll lose even more media-query based responsive features.
 
 ## References & readings
 1. [Email Client Market Share][1] by Litmus  
