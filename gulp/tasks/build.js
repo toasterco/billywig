@@ -5,6 +5,7 @@ import gulp            from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import runSequence     from 'run-sequence';
 import config          from '../config/base_config';
+import nunjucks from 'gulp-nunjucks-render';
 
 const $           = gulpLoadPlugins();
 const browserSync = browserSyncLib.create();
@@ -15,7 +16,7 @@ gulp.task('clean', () => {
 
 gulp.task('html', () => {
   /**
-   * Sequence of events: 
+   * Sequence of events:
    * 1. SCSS is compiled and injected into HTML within <style> tag
    * 2. CSS is inlined using rules within <style> tag as reference
    * 3. Output finished HTML file
@@ -46,12 +47,6 @@ gulp.task('html', () => {
               }
             })
           )
-          .pipe(
-            $.inlineCss({
-              preserveMediaQueries: true,
-              removeLinkTags      : false
-            })
-          )
           .pipe(gulp.dest(`${config.dist}${fileDir}`));
       })
     );
@@ -62,6 +57,13 @@ gulp.task('hot_reload', () => {
     .pipe(browserSync.reload({
       stream: true
     }));
+});
+
+gulp.task('template', () => {
+  return gulp
+    .src('src/base.html')
+    .pipe(nunjucks({path: 'src/components'}))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('media', () => {

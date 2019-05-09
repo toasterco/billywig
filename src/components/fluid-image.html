@@ -1,0 +1,26 @@
+{% macro fluid_image(src, class, width, height) %}
+<td class="{{class}}">
+  <!--[if (gte mso 9)|(IE)]>
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td width="{{width}}" height="{{height}}">
+        <img width="{{width}}" height="{{height}}" src="{{src}}" alt="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0" style="display: none; height: 0;">
+          <tr>
+            <td>
+  <![endif]-->
+  <img class="img" width="100%" src="{{src}}" alt="">
+  <!--[if (gte mso 9)|(IE)]>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <![endif]-->
+</td>
+{% endmacro %}

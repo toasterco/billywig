@@ -1,0 +1,59 @@
+{% from 'fluid-image.html' import fluid_image %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html lang="{{ lang if lang else 'en' }}">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ title if title else '' }}</title>
+    {% if fonts %}
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family={{fonts}}">
+    {% endif %}
+    <!-- build:css -->
+    <!-- endbuild -->
+  </head>
+
+  <body>
+
+  <!-- START root wrapper -->
+    <table class="root-wrapper" cellspacing="0" cellpadding="0" border="0" width="100%" align="center">
+      <tr>
+        <td>
+
+          <!--[if (gte mso 9)|(IE)]>
+          <table width="600" cellspacing="0" cellpadding="0" border="0" align="center">
+            <tr>
+              <td>
+          <![endif]-->
+
+          <!-- START content wrapper -->
+          <table class="content-wrapper" cellspacing="0" cellpadding="0" border="0" width="100%" align="center">
+            <tr>
+              <td>
+                {% block main %}
+                  {{ fluid_image('https://placehold.it/1500x1000') }}
+                {% endblock main %}
+              </td>
+            </tr>
+          </table>
+          <!-- END content wrapper -->
+
+          <!--[if (gte mso 9)|(IE)]>
+              </td>
+            </tr>
+          </table>
+          <![endif]-->
+
+        </td>
+      </tr>
+    </table>
+    <!-- END root wrapper -->
+
+  </body>
+
+</html>
